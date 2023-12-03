@@ -1,0 +1,19 @@
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for picture in pictures %}
+<img src="{{picture.picture.url}}" alt="" style="max-height:300px">
+<h3>Описание: {{picture.description_picture}}</h3>
+<a href="{% url 'delete' picture.id %}">Удалить</a>
+
+
+{% endfor %}
+</body>
+</html>
+
+{% endblock %}
